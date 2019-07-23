@@ -8,7 +8,7 @@ class Error extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="error">
                 <h1>404</h1>
                 <h1>Ooops!</h1>
                 <h1>Page not found</h1>

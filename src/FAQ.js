@@ -1,5 +1,6 @@
 import React from 'react';
-
+import './App.css';
+import Sidebar from './Sidebar';
 
 class FAQ extends React.Component {
     constructor() {
@@ -8,7 +9,7 @@ class FAQ extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="home">
                 <h1>FAQ page</h1>
             </div>
         )

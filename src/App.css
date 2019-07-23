@@ -9,12 +9,18 @@
   color: #fff;
 }
 
+.general {
+  height: 85vh;
+  display: flex;
+  flex-direction: row;
+}
+
 .nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   min-height: 10vh;
-  background-color: #3c6382;
+  background-color: #34495e;
   color: white;
   font-weight: 800;
 }
@@ -27,17 +33,65 @@
   list-style: none;  
 }
 
-.main {
-  height: 85vh;
-}
-
 .footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #3c6382;
+  background-color: #34495e;
   color: #fff;
   max-height: 5vh;
   min-height: 5vh;
   font-size: 12px;
+}
+
+.home { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #fff;
+  margin-top: 30px;
+  margin-bottom: 30px; 
+  width: 80vw;
+}
+
+.sidebar {
+  width: 20vw;
+  height: 85vh;
+  
+}
+
+.bar-list {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none; 
+  padding-top: 10%;
+  padding-right: 10%;
+  font-weight: 800;
+}
+
+.main {
+  display:flex;
+  max-height: 85vw;
+  align-items: center;
+}
+
+.hr { 
+  color: white;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 50px;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #fff;
+  margin-top: 30px;
+  margin-bottom: 30px; 
+  width: 80vw;
 }

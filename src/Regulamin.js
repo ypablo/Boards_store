@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './App.css';
 
 class Regulamin extends React.Component {
     constructor() {
@@ -8,7 +8,8 @@ class Regulamin extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="home">
+
                 <h1>Regulamin page</h1>
             </div>
         )

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './App.css';
 
 class Basket extends React.Component {
     constructor() {
@@ -8,7 +8,7 @@ class Basket extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="home">
                 <h1>Basket page</h1>
             </div>
         )
