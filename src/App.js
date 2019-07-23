@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Home";
-import Basket from "./Basket";
+import Basket from "./pages/Basket";
 import Error from "./Error";
 import Navigation from "./Navigation";
 import FAQ from "./FAQ";
