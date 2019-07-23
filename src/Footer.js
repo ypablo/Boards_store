@@ -1,23 +1,20 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import './App.css';
-import logo from './logo.png';
-import basket from './basket.png';
+import { Link } from "react-router-dom";
 
-class Navigation extends React.Component {
+class Footer extends React.Component {
     constructor() {
         super()
         this.state = {}
     }
-
     render() {
         const navStyle = {
             color: "white",
             textDecoration: "none"
         }
         return (
-            <div className="nav">
-                <h3><img src={logo} alt="Logo" /></h3>
+            <div className="footer">
+                <h4>@All rights reserved</h4>
                 <ul className="nav-links">
                     <Link style={navStyle} to="/">
                         <li>Home</li>
@@ -31,13 +28,10 @@ class Navigation extends React.Component {
                     <Link style={navStyle} to="/kontakt">
                         <li>Kontakt</li>
                     </Link>
-                    <Link style={navStyle} to="/basket">
-                        <li><img src={basket} alt="Basket" /></li>
-                    </Link>
                 </ul>
             </div>
         )
     }
 }
 
-export default Navigation;
+export default Footer;
