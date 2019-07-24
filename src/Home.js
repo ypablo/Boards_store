@@ -1,10 +1,7 @@
 import React from 'react';
 import './App.css';
-import board01 from './img/board01.jpg';
-import board02 from './img/board02.jpg';
-import board03 from './img/board03.jpg';
-import board04 from './img/board04.jpg';
 import jsonBoards from './Boards.json';
+import Pagination from "./Pagination"
 
 
 class Home extends React.Component {
@@ -14,38 +11,26 @@ class Home extends React.Component {
     }
     render() {
         const navStyle = {
-            height: "400px",
-            width: "400px"
+            height: "550px",
+            width: "300px",
+            margin: "5px",
+            border: "1px solid #000" 
         }
 
         return (
-            <div className="home">
+            <div>
+            <div className="home">          
                 {jsonBoards.map((item, index) => {
-                    return <div>
-                        <h1>{item.name}</h1>
-                        <p>{item.price}</p>
-                        <img src={item.img} alt=""/>
-                    </div>
-                    }
-                )}
-
-
-               {/* <div>
-                    <ul>
-                        <li><img src={board01} alt="baord01" style={navStyle} /></li>
-                        <li><img src={board02} alt="board02" style={navStyle} /></li>
-                        <li><img src={board03} alt="board03" style={navStyle} /></li>
-                        <li><img src={board04} alt="board04" style={navStyle} /></li>
-                    </ul>
-                </div >
-                <div>
-                    <ul>
-                        <li><img src={board04} alt="board04" style={navStyle} /></li>
-                        <li><img src={board03} alt="board03" style={navStyle} /></li>
-                        <li><img src={board02} alt="board02" style={navStyle} /></li>
-                        <li><img src={board01} alt="board01" style={navStyle} /></li>
-                    </ul>
-               </div>*/}
+                    return <div key={index}>
+                                <h1>{item.name}</h1>
+                                <p>Price: {item.price}</p>
+                                <img style={navStyle} src={item.img} alt=""/>
+                                <p>{item.last}</p>
+                                <p>{item.new}</p>
+                            </div>
+                            })}              
+            </div>
+                <Pagination/>
             </div>
         )
     }

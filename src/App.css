@@ -50,7 +50,7 @@
   align-items: center;
   border-left: 1px solid #fff;
   margin-top: 30px;
-  margin-bottom: 30px; 
+  
   width: 80vw;
   overflow: auto;
 }
@@ -58,7 +58,6 @@
 .sidebar {
   width: 20vw;
   height: 85vh;
-  
 }
 
 .bar-list {
@@ -95,4 +94,10 @@
   margin-top: 30px;
   margin-bottom: 30px; 
   width: 80vw;
+}
+.paging {
+  display: flex;
+  justify-content: space-around;
+  border-left: 1px solid;
+  padding-top: 20px;
 }

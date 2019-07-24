@@ -1,33 +1,33 @@
 [
     {
         "id": 1,
-        "name": "Product 1",
+        "name": "MadBoard 1",
         "price": "1233,99",
-        "img": "file://localhost/Users/pawel.banas/Desktop/boardgames/src/img/board01.jpg",
+        "img": "http://localhost:3000/img/board01.jpg",
         "last": "Last item",
         "new": null
     },
     {
         "id": 2,
-        "name": "Product 2",
+        "name": "MadBoard 2",
         "price": "1171,98",
-        "img": "",
+        "img": "http://localhost:3000/img/board02.jpg",
         "last product": null,
         "new": "NEW"
     },
     {
         "id": 3,
-        "name": "Product 3",
+        "name": "MadBoard 3",
         "price": "999,69",
-        "img": "",
+        "img": "http://localhost:3000/img/board03.jpg",
         "last": null,
         "new": "NEW"
     },
     {
         "id": 4,
-        "name": "Product 4",
+        "name": "MadBoard 4",
         "price": "1683,95",
-        "img": "",
+        "img": "http://localhost:3000/img/board04.jpg",
         "last": null,
         "new": null
     }
