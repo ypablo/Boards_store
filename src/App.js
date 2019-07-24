@@ -2,12 +2,12 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Home";
-import Basket from "./pages/Basket";
+import Basket from "./Basket";
 import Error from "./Error";
 import Navigation from "./Navigation";
 import FAQ from "./FAQ";
 import Regulamin from "./Regulamin";
-import Kontakt from "./Kontakt";
+import Contact from "./Contact";
 import Footer from "./Footer";
 import Sidebar from './Sidebar';
 
@@ -23,7 +23,7 @@ function App() {
             <Route exact path="/basket" component={Basket} />
             <Route exact path="/faq" component={FAQ} />
             <Route exact path="/regulamin" component={Regulamin} />
-            <Route exact path="/kontakt" component={Kontakt} />
+            <Route exact path="/contact" component={Contact} />
             <Route component={Error} />
           </Switch>
         </div>

@@ -23,10 +23,10 @@ class Footer extends React.Component {
                         <li>FAQ</li>
                     </Link>
                     <Link style={navStyle} to="/regulamin">
-                        <li>Regulamin</li>
+                        <li>Terms and Conditions</li>
                     </Link>
-                    <Link style={navStyle} to="/kontakt">
-                        <li>Kontakt</li>
+                    <Link style={navStyle} to="/contact">
+                        <li>Contact</li>
                     </Link>
                 </ul>
             </div>

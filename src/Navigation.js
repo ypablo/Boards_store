@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './App.css';
-import logo from './logo.png';
-import basket from './basket.png';
+import logo from './img/logo.png';
+import basket from './img/basket.png';
 
 class Navigation extends React.Component {
     constructor() {
@@ -26,10 +26,10 @@ class Navigation extends React.Component {
                         <li>FAQ</li>
                     </Link>
                     <Link style={navStyle} to="/regulamin">
-                        <li>Regulamin</li>
+                        <li>Terms and Conditions</li>
                     </Link>
-                    <Link style={navStyle} to="/kontakt">
-                        <li>Kontakt</li>
+                    <Link style={navStyle} to="/contact">
+                        <li>Contact</li>
                     </Link>
                     <Link style={navStyle} to="/basket">
                         <li><img src={basket} alt="Basket" /></li>

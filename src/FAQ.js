@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Sidebar from './Sidebar';
+
 
 class FAQ extends React.Component {
     constructor() {

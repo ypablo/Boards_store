@@ -15,18 +15,18 @@ class Sidebar extends React.Component {
         return (
             <div className="sidebar">
                 <ul className="bar-list">
-                    <li><h1>Sortuj:</h1></li>
+                    <li><h1>Sort:</h1></li>
                     <Link style={navStyle} to="/basket">
-                        <li>Nazwa A-Z</li>
+                        <li>Name A-Z</li>
                     </Link>
                     <Link style={navStyle} to="/basket">
-                        <li>Nazwa Z-A</li>
+                        <li>Name Z-A</li>
                     </Link>
                     <Link style={navStyle} to="/basket">
-                        <li>Cena rosnąco</li>
+                        <li>Price inreasing</li>
                     </Link>
                     <Link style={navStyle} to="/basket">
-                        <li>Cena malejąco</li>
+                        <li>Price decreasing</li>
                     </Link>
                 </ul>
                 <hr className="hr" />

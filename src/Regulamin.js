@@ -9,8 +9,7 @@ class Regulamin extends React.Component {
     render() {
         return (
             <div className="home">
-
-                <h1>Regulamin page</h1>
+                <h1>Terms and Conditions page</h1>
             </div>
         )
     }
