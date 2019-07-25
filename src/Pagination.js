@@ -15,7 +15,14 @@ class Pagination extends React.Component {
         }
 
         return (
-            <div className="paging">
+            <div className="pagination">
+                <span>&laquo;</span>
+                <span className="active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+
+                {/*<div className="paging">
             <Link style={navStyle} to="/">    
                     <h4>&lt;&lt;First one</h4>
                 </Link>
@@ -27,7 +34,7 @@ class Pagination extends React.Component {
                 </Link>
                 <Link style={navStyle} to="/">    
                     <h4>Last one&gt;&gt;</h4>
-                </Link>
+        </Link>*/}
             </div>
         )
     }

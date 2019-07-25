@@ -95,9 +95,28 @@
   margin-bottom: 30px; 
   width: 80vw;
 }
-.paging {
+.pagination {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   border-left: 1px solid;
   padding-top: 20px;
+}
+
+.pagination span {
+  cursor: pointer;
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination span.active {
+  background-color: #0099FF;
+  color: white;
+  border: 1px solid #0099FF;
+}
+.pagination span:hover {
+  background-color: #34495e;
 }
