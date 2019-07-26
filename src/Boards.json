@@ -35,7 +35,7 @@
         "id": 5,
         "name": "MadBoard 5",
         "price": "1779,45",
-        "img": "http://localhost:3000/img/board01.jpg",
+        "img": "http://localhost:3000/img/board02.jpg",
         "last": null,
         "new": null
     },
@@ -43,7 +43,7 @@
         "id": 6,
         "name": "MadBoard 6",
         "price": "1181,15",
-        "img": "http://localhost:3000/img/board02.jpg",
+        "img": "http://localhost:3000/img/board01.jpg",
         "last": null,
         "new": null
     },
@@ -51,7 +51,7 @@
         "id": 7,
         "name": "MadBoard 7",
         "price": "1980,95",
-        "img": "http://localhost:3000/img/board03.jpg",
+        "img": "http://localhost:3000/img/board04.jpg",
         "last": null,
         "new": null
     },
@@ -59,7 +59,39 @@
         "id": 8,
         "name": "MadBoard 8",
         "price": "1683,95",
+        "img": "http://localhost:3000/img/board03.jpg",
+        "last": null,
+        "new": null
+    },
+    {
+        "id": 9,
+        "name": "MadBoard 9",
+        "price": "1779,45",
+        "img": "http://localhost:3000/img/board03.jpg",
+        "last": null,
+        "new": null
+    },
+    {
+        "id": 10,
+        "name": "MadBoard 10",
+        "price": "1181,15",
         "img": "http://localhost:3000/img/board04.jpg",
+        "last": null,
+        "new": null
+    },
+    {
+        "id": 11,
+        "name": "MadBoard 11",
+        "price": "1980,95",
+        "img": "http://localhost:3000/img/board02.jpg",
+        "last": null,
+        "new": null
+    },
+    {
+        "id": 12,
+        "name": "MadBoard 12",
+        "price": "1683,95",
+        "img": "http://localhost:3000/img/board01.jpg",
         "last": null,
         "new": null
     }

@@ -52,7 +52,7 @@ class Home extends React.Component {
 
         const renderPageNumbers = pageNumbers.map(number => {
             return (
-              <li key={number} id={number} onClick={this.handleClick}>
+              <li className="pagination-span" key={number} id={number} onClick={this.handleClick}>
                 {number}
               </li>
             );
