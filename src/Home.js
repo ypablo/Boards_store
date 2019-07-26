@@ -16,10 +16,10 @@ class Home extends React.Component {
 
     handleClick(event) {
         this.setState({
-          currentPage: Number(event.target.id)
+            currentPage: Number(event.target.id)
         });
     }
-    
+
     render() {
         const navStyle = {
             height: "550px",
@@ -27,7 +27,7 @@ class Home extends React.Component {
             margin: "5px",
             border: "1px solid #000"
         }
-        
+
         // Logic for displaying current items
         const { boardRecords, currentPage, itemsPerPage } = this.state;
         const indexOfLastItem = currentPage * itemsPerPage;
@@ -39,24 +39,24 @@ class Home extends React.Component {
                 <h1>{item.name}</h1>
                 <p>Price: {item.price}</p>
                 <img style={navStyle} src={item.img} alt="" />
-                <p>{item.last}</p>
-                <p>{item.new}</p>
+                <p className="last-item">{item.last}</p>
+                <p className="new-item">{item.new}</p>
             </div>
         })
 
         // Logic for displaying page numbers
         const pageNumbers = [];
         for (let i = 1; i <= Math.ceil(boardRecords.length / itemsPerPage); i++) {
-          pageNumbers.push(i);
+            pageNumbers.push(i);
         }
 
         const renderPageNumbers = pageNumbers.map(number => {
             return (
-              <li className="pagination-span" key={number} id={number} onClick={this.handleClick}>
-                {number}
-              </li>
+                <li className="pagination-span" key={number} id={number} onClick={this.handleClick}>
+                    {number}
+                </li>
             );
-          });
+        });
 
         return (
             <div>
