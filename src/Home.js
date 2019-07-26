@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import jsonBoards from './Boards.json';
-import Pagination from "./Pagination"
 
 
 class Home extends React.Component {
@@ -29,27 +28,45 @@ class Home extends React.Component {
             border: "1px solid #000"
         }
         
+        // Logic for displaying current items
         const { boardRecords, currentPage, itemsPerPage } = this.state;
-
         const indexOfLastItem = currentPage * itemsPerPage;
         const indexOfFirstItem = indexOfLastItem - itemsPerPage;
         const currentItems = boardRecords.slice(indexOfFirstItem, indexOfLastItem);
 
+        const renderItems = currentItems.map((item, index) => {
+            return <div key={index}>
+                <h1>{item.name}</h1>
+                <p>Price: {item.price}</p>
+                <img style={navStyle} src={item.img} alt="" />
+                <p>{item.last}</p>
+                <p>{item.new}</p>
+            </div>
+        })
+
+        // Logic for displaying page numbers
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(boardRecords.length / itemsPerPage); i++) {
+          pageNumbers.push(i);
+        }
+
+        const renderPageNumbers = pageNumbers.map(number => {
+            return (
+              <li key={number} id={number} onClick={this.handleClick}>
+                {number}
+              </li>
+            );
+          });
+
         return (
             <div>
                 <div className="home">
-                    {currentItems.map((item, index) => {
-                        return <div key={index}>
-                            <h1>{item.name}</h1>
-                            <p>Price: {item.price}</p>
-                            <img style={navStyle} src={item.img} alt="" />
-                            <p>{item.last}</p>
-                            <p>{item.new}</p>
-                        </div>
-                    })}
+                    {renderItems}
                 </div>
-                <Pagination boardRecords={boardRecords} itemsPerPage={itemsPerPage}/>
-            </div >
+                <div className="pagination">
+                    {renderPageNumbers}
+                </div>
+            </div>
         )
     }
 }
