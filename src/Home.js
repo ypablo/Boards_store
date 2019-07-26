@@ -21,8 +21,6 @@ class Home extends React.Component {
         });
     }
     
-
-
     render() {
         const navStyle = {
             height: "550px",
@@ -50,7 +48,7 @@ class Home extends React.Component {
                         </div>
                     })}
                 </div>
-                <Pagination boardRecords={this.state.boardRecords} itemsPerPage={this.state.itemsPerPage}/>
+                <Pagination boardRecords={boardRecords} itemsPerPage={itemsPerPage}/>
             </div >
         )
     }

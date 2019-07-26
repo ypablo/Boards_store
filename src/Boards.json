@@ -34,7 +34,7 @@
     {
         "id": 5,
         "name": "MadBoard 5",
-        "price": "1683,95",
+        "price": "1779,45",
         "img": "http://localhost:3000/img/board01.jpg",
         "last": null,
         "new": null
@@ -42,7 +42,7 @@
     {
         "id": 6,
         "name": "MadBoard 6",
-        "price": "1683,95",
+        "price": "1181,15",
         "img": "http://localhost:3000/img/board02.jpg",
         "last": null,
         "new": null
@@ -50,7 +50,7 @@
     {
         "id": 7,
         "name": "MadBoard 7",
-        "price": "1683,95",
+        "price": "1980,95",
         "img": "http://localhost:3000/img/board03.jpg",
         "last": null,
         "new": null
