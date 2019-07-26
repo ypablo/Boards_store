@@ -8,15 +8,19 @@ class Home extends React.Component {
     constructor() {
         super()
         this.state = {
-            numberOfPages: 2,
-            numberOfProducts: jsonBoards.length,
-            setNumberOfProducts: [],
-            recordsPerPage: 4,
-            setRecordsPerPage: 4,
             currentPage: 1,
-            setCurrentPage: 1
-        }
+            itemsPerPage: 4,
+            boardRecords: jsonBoards
+        };
+        this.handleClick = this.handleClick.bind(this);
     }
+
+    handleClick(event) {
+        this.setState({
+          currentPage: Number(event.target.id)
+        });
+    }
+    
 
 
     render() {
@@ -26,17 +30,17 @@ class Home extends React.Component {
             margin: "5px",
             border: "1px solid #000"
         }
+        
+        const { boardRecords, currentPage, itemsPerPage } = this.state;
 
-        const iLastRecord = this.state.currectpage * this.state.recordsPerPage;
-        const iFirstRecord = iLastRecord - this.state.recordsPerPage;
-        const currentRecords = this.state.numberOfProducts.slice(iFirstRecord, iLastRecord);
-
-
+        const indexOfLastItem = currentPage * itemsPerPage;
+        const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+        const currentItems = boardRecords.slice(indexOfFirstItem, indexOfLastItem);
 
         return (
             <div>
                 <div className="home">
-                    {jsonBoards.map((item, index) => {
+                    {currentItems.map((item, index) => {
                         return <div key={index}>
                             <h1>{item.name}</h1>
                             <p>Price: {item.price}</p>
@@ -46,7 +50,7 @@ class Home extends React.Component {
                         </div>
                     })}
                 </div>
-                <Pagination />
+                <Pagination boardRecords={this.state.boardRecords} itemsPerPage={this.state.itemsPerPage}/>
             </div >
         )
     }

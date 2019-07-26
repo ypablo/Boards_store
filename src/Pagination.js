@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Link } from "react-router-dom";
+import './Home';
 
 
 class Pagination extends React.Component {
@@ -8,36 +8,25 @@ class Pagination extends React.Component {
         super()
         this.state = {}
     }
-    render() {
+    render() {  
         const navStyle = {
             color: "white",
             textDecoration: "none"
         }
 
-        return (
-            <div className="pagination">
-                <span>&laquo;</span>
-                <span className="active">1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(this.props.boardRecords.length / this.props.itemsPerPage); i++) {
+          pageNumbers.push(i);
+        }
 
-                {/*<div className="paging">
-            <Link style={navStyle} to="/">    
-                    <h4>&lt;&lt;First one</h4>
-                </Link>
-                <Link style={navStyle} to="/">
-                    <h4>&lt;Previous page</h4>
-                </Link>
-                <Link style={navStyle} to="/">    
-                    <h4>Next page&gt;</h4>
-                </Link>
-                <Link style={navStyle} to="/">    
-                    <h4>Last one&gt;&gt;</h4>
-        </Link>*/}
-            </div>
-        )
-    }
+        const renderPageNumbers = pageNumbers.map(number => {
+            return (
+                <div className="pagination" key={number} id={number} onClick={this.props.handleClick}> 
+                   {number}          
+                </div>
+            )
+        }
+    },
 }
 
 export default Pagination;
