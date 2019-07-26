@@ -23,10 +23,10 @@ class Sidebar extends React.Component {
                         <li>Name Z-A</li>
                     </Link>
                     <Link style={navStyle} to="/basket">
-                        <li>Price inreasing</li>
+                        <li>Price ascending</li>
                     </Link>
                     <Link style={navStyle} to="/basket">
-                        <li>Price decreasing</li>
+                        <li>Price descending</li>
                     </Link>
                 </ul>
                 <hr className="hr" />
