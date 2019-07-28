@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 
-class Basket extends React.Component {
+class Contact extends React.Component {
     constructor() {
         super()
         this.state = {}
@@ -9,10 +9,10 @@ class Basket extends React.Component {
     render() {
         return (
             <div className="home">
-                <h1>Basket page</h1>
+                <h1>Contact page</h1>
             </div>
         )
     }
 }
 
-export default Basket;
+export default Contact;

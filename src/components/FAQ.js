@@ -1,7 +1,8 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 
-class Regulamin extends React.Component {
+
+class FAQ extends React.Component {
     constructor() {
         super()
         this.state = {}
@@ -9,10 +10,10 @@ class Regulamin extends React.Component {
     render() {
         return (
             <div className="home">
-                <h1>Terms and Conditions page</h1>
+                <h1>FAQ page</h1>
             </div>
         )
     }
 }
 
-export default Regulamin;
+export default FAQ;

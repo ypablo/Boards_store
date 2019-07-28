@@ -2,11 +2,15 @@ import React from 'react';
 import './App.css';
 import { Link } from "react-router-dom";
 
+
 class Sidebar extends React.Component {
-    constructor() {
-        super()
-        this.state = {}
+    constructor(props) {
+        super(props)
+        this.state = {
+        }
     }
+
+
     render() {
         const navStyle = {
             color: "white",
@@ -16,16 +20,16 @@ class Sidebar extends React.Component {
             <div className="sidebar">
                 <ul className="bar-list">
                     <li><h1>Sort:</h1></li>
-                    <Link style={navStyle} to="/basket">
+                    <Link style={navStyle} to="/">
                         <li>Name A-Z</li>
                     </Link>
-                    <Link style={navStyle} to="/basket">
+                    <Link style={navStyle} to="/">
                         <li>Name Z-A</li>
                     </Link>
-                    <Link style={navStyle} to="/basket">
+                    <Link style={navStyle} to="/">
                         <li>Price ascending</li>
                     </Link>
-                    <Link style={navStyle} to="/basket">
+                    <Link style={navStyle} to="/">
                         <li>Price descending</li>
                     </Link>
                 </ul>
