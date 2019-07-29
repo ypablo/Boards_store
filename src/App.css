@@ -51,9 +51,11 @@
   justify-content: center;
   align-items: center;
   border-left: 1px solid #fff;
-  margin-top: 30px; 
+  margin-top: 10px; 
   width: 80vw;
   overflow: auto;
+  max-height: 80vh;
+  
 }
 
 .sidebar {
@@ -104,8 +106,8 @@
   flex-direction: row;
   justify-content: center;
   border-left: 1px solid;
-  padding-bottom: 20px;
   margin-right:10px;
+  height: 4vh;
 }
 
 .pagination-span {
@@ -116,8 +118,7 @@
   text-decoration: none;
   transition: background-color .3s;
   border: 1px solid #ddd;
-  list-style: none;
-  
+  list-style: none; 
 }
 
 .pagination span.active {
@@ -151,9 +152,11 @@
 }
 .addCard_btn {
   position: relative;
-  bottom: 60px;
-  height: 60px;
-  width: 120px;
+  left: 95px;
+  bottom: 115px;
+  text-align: center;
+  height: 45px;
+  width: 95px;
   border: none;
   background-color: #34495e;
   color: #fff;

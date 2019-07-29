@@ -29,7 +29,7 @@ class Sidebar extends React.Component {
                     {/*<Link style={navStyle} to="/">
                         <li>Price ascending</li>
         </Link>*/}
-                    <li value={this.props.sort} onClick={this.props.handleChangeSort}>Price ascending</li>
+                    <li value="lowestprice">Price ascending</li>
                     <Link style={navStyle} to="/">
                         <li>Price descending</li>
                     </Link>

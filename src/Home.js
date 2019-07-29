@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import jsonBoards from './Boards.json';
-import Products from './components/Products'
 
 
 class Home extends React.Component {
@@ -11,7 +10,10 @@ class Home extends React.Component {
             currentPage: 1,
             itemsPerPage: 4,
             boardRecords: jsonBoards,
-            prices: [],
+            prices: []
+            //sort: '',
+            //products: [],
+            //filteredProducts: []
         };
         this.handleClick = this.handleClick.bind(this);
         this.sortAscending = this.sortAscending.bind(this);
@@ -38,6 +40,27 @@ class Home extends React.Component {
         console.log(prices)
     }
 
+	/*
+    boardRecords = () => {
+        this.setState(state => {
+            if (state.sort !== '') {
+                state.products.sort((a, b) =>
+                    (state.sort === 'lowestprice'
+                        ? ((a.price > b.price) ? 1 : -1)
+                        : ((a.price < b.price) ? 1 : -1)));
+            } else {
+                state.products.sort((a, b) => (a.id > b.id) ? 1 : -1);
+            }
+            return { filteredProducts: state.products };
+        })
+    }
+    handleSortChange = (e) => {
+        this.setState({ sort: e.target.value });
+        this.boardRecords();
+    }
+    */
+
+
     handleClick(event) {
         this.setState({
             currentPage: Number(event.target.id)
@@ -45,7 +68,6 @@ class Home extends React.Component {
     }
 
     render() {
-        const { prices } = this.state;
 
         const navStyle = {
             height: "550px",
@@ -88,7 +110,8 @@ class Home extends React.Component {
         });
 
         return (
-            <div>
+            <div  >
+                {/*<div className="home" count={this.state.filteredProducts.length} handleSortChange={this.handleSortChange} products={this.state.filteredProducts}>*/}
                 <div className="home">
                     {renderItems}
                 </div>
