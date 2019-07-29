@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import jsonBoards from './Boards.json';
+import Products from './components/Products'
 
 
 class Home extends React.Component {
@@ -37,8 +38,6 @@ class Home extends React.Component {
         console.log(prices)
     }
 
-
-
     handleClick(event) {
         this.setState({
             currentPage: Number(event.target.id)
@@ -46,6 +45,8 @@ class Home extends React.Component {
     }
 
     render() {
+        const { prices } = this.state;
+
         const navStyle = {
             height: "550px",
             width: "300px",
@@ -59,6 +60,7 @@ class Home extends React.Component {
         const indexOfFirstItem = indexOfLastItem - itemsPerPage;
         const currentItems = boardRecords.slice(indexOfFirstItem, indexOfLastItem);
 
+
         const renderItems = currentItems.map((item, index) => {
             return <div key={index}>
                 <h1>{item.name}</h1>
@@ -66,8 +68,10 @@ class Home extends React.Component {
                 <img style={navStyle} src={item.img} alt="" />
                 <p className="last-item">{item.last}</p>
                 <p className="new-item">{item.new}</p>
+                <button className="addCard_btn" onClick={(e) => this.props.handleAddToCart(e, item)}>Add to cart</button>
             </div>
         })
+
 
         // Logic for displaying page numbers
         const pageNumbers = [];

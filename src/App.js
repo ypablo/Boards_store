@@ -19,7 +19,7 @@ function App() {
       <div className="app">
         <Navigation />
         <div className="general">
-          <Sidebar />
+          <Sidebar sort={this.state.sort} handleChangeSort={this.handleChangeSort} />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/basket" component={Basket} />
