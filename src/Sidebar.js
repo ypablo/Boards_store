@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import { Link } from "react-router-dom";
-
+import './Home';
 
 class Sidebar extends React.Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {
         }
     }
