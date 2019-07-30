@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 import Sidebar from './Sidebar';
 import data from './Boards.json';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -25,7 +25,7 @@ export default class App extends Component {
   }
 
   sortAscending(key) {
-    console.log("test")
+    console.log("Sort test")
     this.setState({
       data: data.sort((a, b) => (
         this.state.direction[key] === 'asc'
@@ -63,3 +63,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default App;

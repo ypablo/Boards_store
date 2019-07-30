@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import jsonBoards from './Boards.json';
 
-
 class Home extends React.Component {
     constructor(props) {
         super(props)
@@ -66,6 +65,7 @@ class Home extends React.Component {
         this.setState({
             currentPage: Number(event.target.id)
         });
+
     }
 
     render() {
@@ -93,7 +93,9 @@ class Home extends React.Component {
                 <p className="last-item">{item.last}</p>
                 <p className="new-item">{item.new}</p>
                 <button className="addCard_btn" onClick={(e) => this.props.handleAddToCart(e, item)}>Add to cart</button>
+
             </div>
+
         })
 
 
@@ -115,6 +117,7 @@ class Home extends React.Component {
             <div>
                 <div className="home">
                     {renderItems}
+
                 </div>
                 <div className="pagination">
                     {renderPageNumbers}
