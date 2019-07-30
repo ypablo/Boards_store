@@ -7,10 +7,19 @@ class Basket extends React.Component {
         this.state = {}
     }
     render() {
+        const navStyle = {
+            height: "550px",
+            width: "300px",
+            margin: "5px",
+            border: "1px solid #000"
+        }
+
+
         return (
-            <div className="home">
-                <h1>Basket page</h1>
-            </div>
+            < div className="home" >
+
+
+            </div >
         )
     }
 }

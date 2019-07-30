@@ -15,11 +15,12 @@ class Home extends React.Component {
             //products: [],
             //filteredProducts: []
         };
-        this.handleClick = this.handleClick.bind(this);
-        this.sortAscending = this.sortAscending.bind(this);
-        this.sortDescending = this.sortDescending.bind(this);
-    }
 
+        this.handleClick = this.handleClick.bind(this);
+        /*this.sortAscending = this.sortAscending.bind(this);
+        this.sortDescending = this.sortDescending.bind(this);*/
+    }
+    /*
     componentDidMount() {
         let { boardRecords, prices } = this.state
         prices = boardRecords.map(item => parseFloat(item.price));
@@ -39,7 +40,7 @@ class Home extends React.Component {
         this.setState({ prices })
         console.log(prices)
     }
-
+    */
 	/*
     boardRecords = () => {
         this.setState(state => {
@@ -73,7 +74,8 @@ class Home extends React.Component {
             height: "550px",
             width: "300px",
             margin: "5px",
-            border: "1px solid #000"
+            border: "1px solid #000",
+            objectFit: "cover"
         }
 
         // Logic for displaying current items
@@ -84,7 +86,7 @@ class Home extends React.Component {
 
 
         const renderItems = currentItems.map((item, index) => {
-            return <div key={index}>
+            return <div className="boardItems" key={index}>
                 <h1>{item.name}</h1>
                 <p>Price: {item.price}</p>
                 <img style={navStyle} src={item.img} alt="" />
@@ -110,15 +112,14 @@ class Home extends React.Component {
         });
 
         return (
-            <div  >
-                {/*<div className="home" count={this.state.filteredProducts.length} handleSortChange={this.handleSortChange} products={this.state.filteredProducts}>*/}
+            <div>
                 <div className="home">
                     {renderItems}
                 </div>
                 <div className="pagination">
                     {renderPageNumbers}
-                    <button onClick={this.sortAscending}>asc</button>
-                    <button onClick={this.sortDescending}>desc</button>
+                    <button onClick={this.props.sort}>asc - desc</button>
+                    {/*<button onClick={() => this.sortDescending}>desc</button>*/}
                 </div>
             </div >
         )
