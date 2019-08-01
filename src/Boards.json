@@ -58,7 +58,7 @@
     {
         "id": 8,
         "name": "MadBoard 8",
-        "price": "1683,95",
+        "price": "1683,15",
         "img": "http://localhost:3000/img/board03.jpg",
         "last": null,
         "new": "NEW"
@@ -90,7 +90,7 @@
     {
         "id": 12,
         "name": "MadBoard 12",
-        "price": "1683,60",
+        "price": "1543,60",
         "img": "http://localhost:3000/img/board01.jpg",
         "last": "Last item",
         "new": null

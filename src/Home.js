@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import jsonBoards from './Boards.json';
+import { orderBy } from "lodash";
 
 class Home extends React.Component {
     constructor(props) {
@@ -9,7 +10,10 @@ class Home extends React.Component {
             currentPage: 1,
             itemsPerPage: 4,
             boardRecords: jsonBoards,
-            prices: []
+            prices: [],
+            sortParams: {
+                direction: undefined
+            }
             //sort: '',
             //products: [],
             //filteredProducts: []
@@ -59,7 +63,22 @@ class Home extends React.Component {
         this.boardRecords();
     }
     */
+    //----
+    handleSortClick() {
+        const { boardRecords, sortParams: { direction } } = this.state;
 
+        // Check, what direction now should be
+        const sortDirection = direction === "desc" ? "asc" : "desc";
+
+        // Sort collection  
+        const sortedCollection = orderBy(boardRecords, item => parseFloat(item.price), [sortDirection]);
+
+        //Update component state with new data
+        this.setState({
+            boardRecords: sortedCollection, sortParams: { direction: sortDirection }
+        });
+    }
+    //-----------
 
     handleClick(event) {
         this.setState({
@@ -121,8 +140,8 @@ class Home extends React.Component {
                 </div>
                 <div className="pagination">
                     {renderPageNumbers}
-                    <button onClick={this.props.sort}>asc - desc</button>
-                    {/*<button onClick={() => this.sortDescending}>desc</button>*/}
+                    <button onClick={() => this.handleSortClick("id")}>Name asc - desc</button>
+                    <button onClick={() => this.handleSortClick()}>Price asc - desc</button>
                 </div>
             </div >
         )
