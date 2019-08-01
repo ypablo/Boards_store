@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import './Home';
 
 class Sidebar extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
         }
     }
@@ -26,10 +26,9 @@ class Sidebar extends React.Component {
                     <Link style={navStyle} to="/">
                         <li>Name Z-A</li>
                     </Link>
-                    {/*<Link style={navStyle} to="/">
+                    <Link style={navStyle} to="/" onClick={this.props.handleSortClick}>
                         <li>Price ascending</li>
-        </Link>*/}
-                    <li value="lowestprice">Price ascending</li>
+                    </Link>
                     <Link style={navStyle} to="/">
                         <li>Price descending</li>
                     </Link>

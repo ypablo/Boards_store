@@ -20,6 +20,7 @@ class Home extends React.Component {
         };
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleSortClick = this.handleSortClick.bind(this);
         /*this.sortAscending = this.sortAscending.bind(this);
         this.sortDescending = this.sortDescending.bind(this);*/
     }
@@ -64,15 +65,12 @@ class Home extends React.Component {
     }
     */
     //----
-    handleSortClick() {
+    handleSortClick = () => {
         const { boardRecords, sortParams: { direction } } = this.state;
-
         // Check, what direction now should be
         const sortDirection = direction === "desc" ? "asc" : "desc";
-
         // Sort collection  
         const sortedCollection = orderBy(boardRecords, item => parseFloat(item.price), [sortDirection]);
-
         //Update component state with new data
         this.setState({
             boardRecords: sortedCollection, sortParams: { direction: sortDirection }
@@ -132,8 +130,10 @@ class Home extends React.Component {
             );
         });
 
+
         return (
-            <div>
+
+            < div >
                 <div className="home">
                     {renderItems}
 
@@ -141,7 +141,7 @@ class Home extends React.Component {
                 <div className="pagination">
                     {renderPageNumbers}
                     <button onClick={() => this.handleSortClick("id")}>Name asc - desc</button>
-                    <button onClick={() => this.handleSortClick()}>Price asc - desc</button>
+                    <button handleSortClick={this.handleSortClick}>Price asc - desc</button>
                 </div>
             </div >
         )
