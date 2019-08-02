@@ -10,33 +10,18 @@ import Terms from "./components/Terms";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Sidebar from './Sidebar';
-import data from './Boards.json';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: data,
-      direction: {
-        price: 'asc'
-      }
-    }
-    this.sortAscending = this.sortAscending.bind(this);
+      data: "Hello World", 
+    } 
+    this.click=this.click.bind(this);
   }
 
-  sortAscending(key) {
-    console.log("Sort test")
-    this.setState({
-      data: data.sort((a, b) => (
-        this.state.direction[key] === 'asc'
-          ? parseFloat(a[key]) - parseFloat(b[key])
-          : parseFloat(b[key]) - parseFloat(a[key])
-      )),
-      direction: {
-        [key]: this.state.direction[key] === 'asc'
-          ? 'desc' : 'asc'
-      }
-    })
+  click() {
+    alert("Hello");
   }
 
 
@@ -46,9 +31,9 @@ class App extends Component {
         <div className="app">
           <Navigation />
           <div className="general">
-            <Sidebar />
+            <Sidebar dataFromParent = {this.click}/>
             <Switch>
-              <Route exact path="/" component={Home} data={this.state.data} sort={this.sortAscending} />
+              <Route exact path="/" render={() => <Home dataFromParent = {this.click}/>} />
               <Route exact path="/basket" component={Basket} />
               <Route exact path="/faq" component={FAQ} />
               <Route exact path="/regulamin" component={Terms} />

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import jsonBoards from './Boards.json';
 import { orderBy } from "lodash";
+import Sidebar from "./Sidebar";
 
 class Home extends React.Component {
     constructor(props) {
@@ -82,8 +83,8 @@ class Home extends React.Component {
         this.setState({
             currentPage: Number(event.target.id)
         });
-
     }
+
 
     render() {
 
@@ -131,17 +132,19 @@ class Home extends React.Component {
         });
 
 
+        
+
         return (
 
-            < div >
+            <div>
                 <div className="home">
                     {renderItems}
-
                 </div>
                 <div className="pagination">
                     {renderPageNumbers}
-                    <button onClick={() => this.handleSortClick("id")}>Name asc - desc</button>
-                    <button handleSortClick={this.handleSortClick}>Price asc - desc</button>
+                    <button onClick={this.handleSortClick}>Name asc - desc</button>
+                    <button onClick={this.handleSortClick}>Price asc - desc</button>
+                    <button onClick={this.props.dataFromParent}>Napis</button>
                 </div>
             </div >
         )
