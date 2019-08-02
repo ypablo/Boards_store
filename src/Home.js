@@ -13,17 +13,21 @@ class Home extends React.Component {
             boardRecords: jsonBoards,
             prices: [],
             sortParams: {
-                direction: undefined
+                direction: props.direction
             }
             //sort: '',
             //products: [],
             //filteredProducts: []
         };
-
+        //this.handleSortClick()
         this.handleClick = this.handleClick.bind(this);
         this.handleSortClick = this.handleSortClick.bind(this);
         /*this.sortAscending = this.sortAscending.bind(this);
         this.sortDescending = this.sortDescending.bind(this);*/
+    }
+
+    componentDidMount() {
+        this.handleSortClick()
     }
     /*
     componentDidMount() {
@@ -67,6 +71,7 @@ class Home extends React.Component {
     */
     //----
     handleSortClick = () => {
+        console.log("start ")
         const { boardRecords, sortParams: { direction } } = this.state;
         // Check, what direction now should be
         const sortDirection = direction === "desc" ? "asc" : "desc";
@@ -76,6 +81,7 @@ class Home extends React.Component {
         this.setState({
             boardRecords: sortedCollection, sortParams: { direction: sortDirection }
         });
+        console.log("stop " + direction)
     }
     //-----------
 
@@ -132,7 +138,7 @@ class Home extends React.Component {
         });
 
 
-        
+
 
         return (
 
@@ -142,9 +148,9 @@ class Home extends React.Component {
                 </div>
                 <div className="pagination">
                     {renderPageNumbers}
-                    <button onClick={this.handleSortClick}>Name asc - desc</button>
+                    {/*<button onClick={this.handleSortClick}>Name asc - desc</button>
                     <button onClick={this.handleSortClick}>Price asc - desc</button>
-                    <button onClick={this.props.dataFromParent}>Napis</button>
+        <button onClick={this.props.dataFromParent}>Napis</button>*/}
                 </div>
             </div >
         )

@@ -15,25 +15,39 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: "Hello World", 
-    } 
-    this.click=this.click.bind(this);
+      data: "Hello World",
+      direction: "asc"
+    }
+    this.chosenAsc = this.chosenAsc.bind(this);
+    this.chosenDesc = this.chosenDesc.bind(this);
   }
 
   click() {
     alert("Hello");
   }
 
+  chosenAsc() {
+    console.log("ASC start")
+    this.setState({ direction: "asc" });
+    console.log("ASC stop")
+  }
+
+  chosenDesc() {
+    console.log("DESC start")
+    this.setState({ direction: "desc" });
+    console.log("DESC stop")
+  }
 
   render() {
+    const direction = this.state.direction
     return (
       <BrowserRouter  >
         <div className="app">
           <Navigation />
           <div className="general">
-            <Sidebar dataFromParent = {this.click}/>
+            <Sidebar asc={this.chosenAsc} desc={this.chosenDesc} />
             <Switch>
-              <Route exact path="/" render={() => <Home dataFromParent = {this.click}/>} />
+              <Route exact path="/" render={() => <Home dataFromParent={this.click} direction={direction} />} />
               <Route exact path="/basket" component={Basket} />
               <Route exact path="/faq" component={FAQ} />
               <Route exact path="/regulamin" component={Terms} />

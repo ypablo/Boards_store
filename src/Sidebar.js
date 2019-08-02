@@ -1,20 +1,14 @@
 import React from 'react';
 import './App.css';
 import { Link } from "react-router-dom";
-import Home from './Home';
 
 class Sidebar extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            data: "Default parent state"
-        }
-        this.foo = this.foo.bind(this)
+        this.state = {}
     }
 
-    foo() {
-       alert("Test")
-    }
+
 
     render() {
         const navStyle = {
@@ -25,19 +19,18 @@ class Sidebar extends React.Component {
             <div className="sidebar">
                 <ul className="bar-list">
                     <li><h1>Sort:</h1></li>
-                    <Link style={navStyle} to="/">
+                    <div style={navStyle} to="/">
                         <li>Name A-Z</li>
-                    </Link>
-                    <Link style={navStyle} to="/">
+                    </div>
+                    <div style={navStyle} to="/">
                         <li>Name Z-A</li>
-                    </Link>
-                    <Link style={navStyle} to="/" onClick={this.props.dataFromParent}>
+                    </div>
+                    <div style={navStyle} onClick={this.props.asc}>
                         <li>Price ascending</li>
-                       
-                    </Link>
-                    <Link style={navStyle} to="/" foo={this.foo}>
+                    </div>
+                    <div style={navStyle} onClick={this.props.desc}>
                         <li>Price descending</li>
-                    </Link>
+                    </div>
                 </ul>
                 <hr className="hr" />
             </div>
