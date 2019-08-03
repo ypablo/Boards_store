@@ -54,11 +54,10 @@
   align-items: center;
   align-content: flex-end;
   border-left: 1px solid #fff;
-  padding-top: 15px; 
+  margin-top: 20px; 
   width: 80vw;
   overflow: auto;
-  max-height: 85vh;
-  border: 1px solid;
+  height: 70vh;
 }
 .container {
   display: flex;
@@ -122,17 +121,16 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   border-left: 1px solid;
   margin:0;
-  height: 6vh;
+  height: 10vh;
   width: auto;
-  border: 1px solid red;
 }
 
 .pagination-span {
   cursor: pointer;
   color: black;
-  float: left;
   padding: 8px 16px;
   text-decoration: none;
   transition: background-color .3s;
@@ -145,32 +143,38 @@
   background-color: #34495e;
 }
 
-.last-item {
+
+.boardItems {
   position: relative;
-  
+}
+
+.last-item {
+  position: absolute;
   color: red;
-  font-weight: 300;
+  top: 4em;
+  left: 0em;
+  font-weight: 400;
   height: 20px;
   text-align: left;
   padding-left: 10px;
   margin:5px;
-  border: 1px solid;
+  
 }
 .new-item {
-  position: relative;
-  
+  position: absolute;
+  top: 4em;
+  right: 0em;
   height: 20px;
   font-weight: 600;
   color: orange;
   text-align: right;
   padding-right: 10px;
   margin:5px;
-  border: 1px solid;
 }
 .addCard_btn {
-  position: relative;
-  left: 95px;
-  bottom: 115px;
+  position: absolute;
+  right: 1em;
+  bottom: 2em;
   text-align: center;
   height: 45px;
   width: 95px;
@@ -181,6 +185,3 @@
   cursor: pointer;
 }
 
-.boardItems {
-  height: 77vh;
-}
