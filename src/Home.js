@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import jsonBoards from './Boards.json';
 import { orderBy } from "lodash";
-import Sidebar from "./Sidebar";
+
 
 class Home extends React.Component {
     constructor(props) {
@@ -13,77 +13,36 @@ class Home extends React.Component {
             boardRecords: jsonBoards,
             prices: [],
             sortParams: {
-                direction: props.direction
-            }
-            //sort: '',
-            //products: [],
-            //filteredProducts: []
+                direction: undefined
+            }          
         };
-        //this.handleSortClick()
         this.handleClick = this.handleClick.bind(this);
-        this.handleSortClick = this.handleSortClick.bind(this);
-        /*this.sortAscending = this.sortAscending.bind(this);
-        this.sortDescending = this.sortDescending.bind(this);*/
+        this.handleSortPriceAsc = this.handleSortPriceAsc.bind(this);
+        this.handleSortPriceDesc = this.handleSortPriceDesc.bind(this);
+        this.handleSortNameAsc = this.handleSortNameAsc.bind(this);
+        this.handleSortNameDesc = this.handleSortNameDesc.bind(this);
     }
 
-    componentDidMount() {
-        this.handleSortClick()
+    handleSortNameAsc() {
+        const { boardRecords } = this.state;
+        const sortedCollection = orderBy(boardRecords, ['id'], ['asc']);
+        this.setState({boardRecords: sortedCollection, sortParams:"asc"})
     }
-    /*
-    componentDidMount() {
-        let { boardRecords, prices } = this.state
-        prices = boardRecords.map(item => parseFloat(item.price));
-        this.setState({ prices })
+    handleSortNameDesc() {
+        const { boardRecords } = this.state;
+        const sortedCollection = orderBy(boardRecords, ['id'], ['desc']);
+        this.setState({boardRecords: sortedCollection, sortParams:"desc"})
     }
-
-    sortAscending = () => {
-        const { prices } = this.state;
-        prices.sort((a, b) => a - b)
-        this.setState({ prices })
-        console.log(prices)
+    handleSortPriceAsc() {
+        const { boardRecords } = this.state;
+        const sortedCollection = orderBy(boardRecords,  item =>  parseFloat(item.price), ['asc']);
+        this.setState({boardRecords: sortedCollection, sortParams:"asc"})
     }
-
-    sortDescending = () => {
-        const { prices } = this.state;
-        prices.sort((a, b) => a - b).reverse()
-        this.setState({ prices })
-        console.log(prices)
+    handleSortPriceDesc() {
+        const { boardRecords } = this.state;
+        const sortedCollection = orderBy(boardRecords, item =>  parseFloat(item.price), ['desc']);
+        this.setState({boardRecords: sortedCollection, sortParams:"desc"})
     }
-    */
-	/*
-    boardRecords = () => {
-        this.setState(state => {
-            if (state.sort !== '') {
-                state.products.sort((a, b) =>
-                    (state.sort === 'lowestprice'
-                        ? ((a.price > b.price) ? 1 : -1)
-                        : ((a.price < b.price) ? 1 : -1)));
-            } else {
-                state.products.sort((a, b) => (a.id > b.id) ? 1 : -1);
-            }
-            return { filteredProducts: state.products };
-        })
-    }
-    handleSortChange = (e) => {
-        this.setState({ sort: e.target.value });
-        this.boardRecords();
-    }
-    */
-    //----
-    handleSortClick = () => {
-        console.log("start ")
-        const { boardRecords, sortParams: { direction } } = this.state;
-        // Check, what direction now should be
-        const sortDirection = direction === "desc" ? "asc" : "desc";
-        // Sort collection  
-        const sortedCollection = orderBy(boardRecords, item => parseFloat(item.price), [sortDirection]);
-        //Update component state with new data
-        this.setState({
-            boardRecords: sortedCollection, sortParams: { direction: sortDirection }
-        });
-        console.log("stop " + direction)
-    }
-    //-----------
 
     handleClick(event) {
         this.setState({
@@ -91,9 +50,7 @@ class Home extends React.Component {
         });
     }
 
-
     render() {
-
         const navStyle = {
             height: "550px",
             width: "300px",
@@ -102,28 +59,24 @@ class Home extends React.Component {
             objectFit: "cover"
         }
 
-        // Logic for displaying current items
         const { boardRecords, currentPage, itemsPerPage } = this.state;
         const indexOfLastItem = currentPage * itemsPerPage;
         const indexOfFirstItem = indexOfLastItem - itemsPerPage;
         const currentItems = boardRecords.slice(indexOfFirstItem, indexOfLastItem);
 
-
         const renderItems = currentItems.map((item, index) => {
             return <div className="boardItems" key={index}>
                 <h1>{item.name}</h1>
                 <p>Price: {item.price}</p>
-                <img style={navStyle} src={item.img} alt="" />
                 <p className="last-item">{item.last}</p>
                 <p className="new-item">{item.new}</p>
+                <img style={navStyle} src={item.img} alt="" />
+                
                 <button className="addCard_btn" onClick={(e) => this.props.handleAddToCart(e, item)}>Add to cart</button>
 
             </div>
-
         })
 
-
-        // Logic for displaying page numbers
         const pageNumbers = [];
         for (let i = 1; i <= Math.ceil(boardRecords.length / itemsPerPage); i++) {
             pageNumbers.push(i);
@@ -137,21 +90,34 @@ class Home extends React.Component {
             );
         });
 
-
-
-
         return (
-
-            <div>
-                <div className="home">
-                    {renderItems}
+            <div className="container">
+                <div className="sidebar">
+                    <ul className="bar-list">
+                        <li><h1>Sort:</h1></li>
+                        <div onClick={this.handleSortNameAsc}>
+                            <li>Name A-Z</li>
+                        </div>
+                        <div onClick={this.handleSortNameDesc}>
+                            <li>Name Z-A</li>
+                        </div>
+                        <div onClick={this.handleSortPriceAsc}>
+                            <li>Price ascending</li>
+                        </div>
+                        <div onClick={this.handleSortPriceDesc}>
+                            <li>Price descending</li>
+                        </div>
+                    </ul>
+                    <hr className="hr" />
                 </div>
-                <div className="pagination">
-                    {renderPageNumbers}
-                    {/*<button onClick={this.handleSortClick}>Name asc - desc</button>
-                    <button onClick={this.handleSortClick}>Price asc - desc</button>
-        <button onClick={this.props.dataFromParent}>Napis</button>*/}
-                </div>
+                <div className="subContainer">
+                    <div className="home">
+                        {renderItems} 
+                    </div>
+                    <div className="pagination">
+                        {renderPageNumbers}
+                    </div>
+                </div>    
             </div >
         )
     }

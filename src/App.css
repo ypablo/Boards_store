@@ -25,6 +25,7 @@
   background-color: #34495e;
   color: white;
   font-weight: 800;
+  margin: 0;
 }
 
 .nav-links {
@@ -44,26 +45,42 @@
   max-height: 5vh;
   min-height: 5vh;
   font-size: 12px;
+  margin: 0;
 }
 
 .home { 
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: flex-end;
   border-left: 1px solid #fff;
-  margin-top: 10px; 
+  padding-top: 15px; 
   width: 80vw;
   overflow: auto;
-  max-height: 80vh;
-  
+  max-height: 85vh;
+  border: 1px solid;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 85vh;
+  width: 100vw;
+  margin: 0;
+}
+
+.subContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
 
 .sidebar {
   width: 20vw;
-  height: 85vh;
 }
 .sidebar li {
   cursor: pointer;
+  text-decoration: none;
+  color: #fff;
 }
 
 .bar-list {
@@ -106,8 +123,10 @@
   flex-direction: row;
   justify-content: center;
   border-left: 1px solid;
-  margin-right:10px;
-  height: 4vh;
+  margin:0;
+  height: 6vh;
+  width: auto;
+  border: 1px solid red;
 }
 
 .pagination-span {
@@ -119,36 +138,34 @@
   transition: background-color .3s;
   border: 1px solid #ddd;
   list-style: none; 
+  height: 2vh;
 }
 
-.pagination span.active {
-  background-color: #0099FF;
-  color: white;
-  border: 1px solid #0099FF;
-}
 .pagination-span:hover {
   background-color: #34495e;
 }
 
 .last-item {
   position: relative;
-  bottom: 560px;
+  
   color: red;
   font-weight: 300;
   height: 20px;
   text-align: left;
   padding-left: 10px;
   margin:5px;
+  border: 1px solid;
 }
 .new-item {
   position: relative;
-  bottom: 585px;
+  
   height: 20px;
   font-weight: 600;
   color: orange;
   text-align: right;
   padding-right: 10px;
   margin:5px;
+  border: 1px solid;
 }
 .addCard_btn {
   position: relative;
