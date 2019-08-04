@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import jsonBoards from './Boards.json';
 import { orderBy } from "lodash";
-
+import { withRouter } from 'react-router-dom';
 
 class Home extends React.Component {
     constructor(props) {
@@ -22,8 +22,12 @@ class Home extends React.Component {
         this.handleSortPriceDesc = this.handleSortPriceDesc.bind(this);
         this.handleSortNameAsc = this.handleSortNameAsc.bind(this);
         this.handleSortNameDesc = this.handleSortNameDesc.bind(this);
+        this.routeChange = this.routeChange.bind(this);
     }
-
+    routeChange() {
+        let path = `/product`;
+        this.props.history.push(path);
+    }
     handleSortNameAsc() {
         const { boardRecords } = this.state;
         const sortedCollection = orderBy(boardRecords, ['id'], ['asc']);
@@ -67,7 +71,7 @@ class Home extends React.Component {
                 <p style={{ fontStyle: "italic" }}>Price: {item.price}</p>
                 <p className="last-item">{item.last}</p>
                 <p className="new-item">{item.new}</p>
-                <img className="imgBoard" onClick={() => console.log("Click")} src={item.img} alt="" />
+                <img className="imgBoard" onClick={this.routeChange} src={item.img} alt="" />
 
                 <button className="addCard-btn" onClick={(e) => this.props.handleAddToCart(e, item)}>Add to cart </button>
 

@@ -9,12 +9,13 @@ import FAQ from "./components/FAQ";
 import Terms from "./components/Terms";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Product from "./components/Product"
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {}
-    
+
   }
 
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
               <Route exact path="/faq" component={FAQ} />
               <Route exact path="/regulamin" component={Terms} />
               <Route exact path="/contact" component={Contact} />
+              <Route path="/product" component={Product} />
               <Route component={Error} />
             </Switch>
           </div>
