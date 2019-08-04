@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-
+import { ProductConsumer } from '../context'
 
 class FAQ extends React.Component {
     constructor() {
@@ -9,8 +9,16 @@ class FAQ extends React.Component {
     }
     render() {
         return (
-            <div className="home">
-                <h1>FAQ page</h1>
+            <div className="container">
+                <div >
+                    <h1>FAQ page</h1>
+                </div>
+                <ProductConsumer>
+                    {(anyvalue) => {
+                        console.log(anyvalue)
+                    }
+                    }
+                </ProductConsumer>
             </div>
         )
     }

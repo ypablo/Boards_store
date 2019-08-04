@@ -16,7 +16,7 @@ class Basket extends React.Component {
 
 
         return (
-            < div className="home" >
+            < div className="container" >
 
 
             </div >

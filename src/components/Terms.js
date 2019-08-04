@@ -9,7 +9,7 @@ class Terms extends React.Component {
     }
     render() {
         return (
-            <div className="terms">
+            <div className="container">
                 <h1>Terms and Conditions page</h1>
             </div>
         )

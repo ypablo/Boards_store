@@ -8,13 +8,14 @@ class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            inBasket: 0,
             currentPage: 1,
             itemsPerPage: 4,
             boardRecords: jsonBoards,
             prices: [],
             sortParams: {
                 direction: undefined
-            }          
+            }
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleSortPriceAsc = this.handleSortPriceAsc.bind(this);
@@ -26,22 +27,22 @@ class Home extends React.Component {
     handleSortNameAsc() {
         const { boardRecords } = this.state;
         const sortedCollection = orderBy(boardRecords, ['id'], ['asc']);
-        this.setState({boardRecords: sortedCollection, sortParams:"asc"})
+        this.setState({ boardRecords: sortedCollection, sortParams: "asc" })
     }
     handleSortNameDesc() {
         const { boardRecords } = this.state;
         const sortedCollection = orderBy(boardRecords, ['id'], ['desc']);
-        this.setState({boardRecords: sortedCollection, sortParams:"desc"})
+        this.setState({ boardRecords: sortedCollection, sortParams: "desc" })
     }
     handleSortPriceAsc() {
         const { boardRecords } = this.state;
-        const sortedCollection = orderBy(boardRecords,  item =>  parseFloat(item.price), ['asc']);
-        this.setState({boardRecords: sortedCollection, sortParams:"asc"})
+        const sortedCollection = orderBy(boardRecords, item => parseFloat(item.price), ['asc']);
+        this.setState({ boardRecords: sortedCollection, sortParams: "asc" })
     }
     handleSortPriceDesc() {
         const { boardRecords } = this.state;
-        const sortedCollection = orderBy(boardRecords, item =>  parseFloat(item.price), ['desc']);
-        this.setState({boardRecords: sortedCollection, sortParams:"desc"})
+        const sortedCollection = orderBy(boardRecords, item => parseFloat(item.price), ['desc']);
+        this.setState({ boardRecords: sortedCollection, sortParams: "desc" })
     }
 
     handleClick(event) {
@@ -50,15 +51,11 @@ class Home extends React.Component {
         });
     }
 
-    render() {
-        const navStyle = {
-            height: "550px",
-            width: "300px",
-            margin: "5px",
-            border: "1px solid #000",
-            objectFit: "cover"
-        }
+    handleAddToCart() {
+        console.log("AddToCart")
+    }
 
+    render() {
         const { boardRecords, currentPage, itemsPerPage } = this.state;
         const indexOfLastItem = currentPage * itemsPerPage;
         const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -67,14 +64,14 @@ class Home extends React.Component {
         const renderItems = currentItems.map((item, index) => {
             return <div className="boardItems" key={index}>
                 <h1>{item.name}</h1>
-                <p>Price: {item.price}</p>
+                <p style={{ fontStyle: "italic" }}>Price: {item.price}</p>
                 <p className="last-item">{item.last}</p>
                 <p className="new-item">{item.new}</p>
-                <img style={navStyle} src={item.img} alt="" />
-                
-                <button className="addCard_btn" onClick={(e) => this.props.handleAddToCart(e, item)}>Add to cart</button>
+                <img className="imgBoard" onClick={() => console.log("Click")} src={item.img} alt="" />
 
-            </div>
+                <button className="addCard-btn" onClick={(e) => this.props.handleAddToCart(e, item)}>Add to cart </button>
+
+            </div >
         })
 
         const pageNumbers = [];
@@ -111,13 +108,13 @@ class Home extends React.Component {
                     <hr className="hr" />
                 </div>
                 <div className="subContainer">
-                    <div className="home">
-                        {renderItems} 
+                    <div className="product">
+                        {renderItems}
                     </div>
                     <div className="pagination">
                         {renderPageNumbers}
                     </div>
-                </div>    
+                </div>
             </div >
         )
     }

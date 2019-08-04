@@ -1,6 +1,5 @@
 * {
   margin:0;
-  /*font-family: 'Nanum Gothic', sans-serif;*/
   scroll-behavior: smooth;
 }
 
@@ -48,17 +47,6 @@
   margin: 0;
 }
 
-.home { 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: flex-end;
-  border-left: 1px solid #fff;
-  margin-top: 20px; 
-  width: 80vw;
-  /*overflow: auto;*/
-  height: 70vh;
-}
 .container {
   display: flex;
   flex-direction: row;
@@ -73,9 +61,22 @@
   margin: 0;
 }
 
+.product { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+  border-left: 1px solid #fff;
+  margin-top: 20px;
+  width: 80vw;
+  overflow: auto;
+  height: 70vh;
+}
+
 .sidebar {
   width: 20vw;
 }
+
 .sidebar li {
   cursor: pointer;
   text-decoration: none;
@@ -112,10 +113,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 85vh;
   border-left: 1px solid #fff;
   margin-top: 30px;
   margin-bottom: 30px; 
-  width: 80vw;
+  width: 100vw;
 }
 .pagination {
   display: flex;
@@ -143,16 +145,29 @@
   background-color: #34495e;
 }
 
+.imgBoard {
+  height: 525px;
+  width: 275px;
+  margin: 5px;
+  border: 1px solid #000;
+  object-fit: cover;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.imgBoard:hover {
+  transform: scale(1.02,1.02);
+  box-shadow: 1px 1px 15px 5px rgba(0,0,0,0.3);
+}
+
+.imgBoard:hover + .addCard-btn {
+  display: inline-block;
+  opacity: 1;
+}
+
 
 .boardItems {
   position: relative;
-  transition: 1.1s;
 }
-
-.boardItems:hover {
-  transform: scale(1.05,1.05);
-}
-
 .last-item {
   position: absolute;
   color: red;
@@ -163,7 +178,6 @@
   text-align: left;
   padding-left: 10px;
   margin:5px;
-  
 }
 .new-item {
   position: absolute;
@@ -176,7 +190,7 @@
   padding-right: 10px;
   margin:5px;
 }
-.addCard_btn {
+.addCard-btn {
   position: absolute;
   right: 1em;
   bottom: 2em;
@@ -187,6 +201,19 @@
   background-color: #34495e;
   color: #fff;
   font-weight: 800;
+  opacity: 0;
+  transition: all .3s linear;
   cursor: pointer;
 }
 
+.addCard-btn:hover {
+  display: inline-block;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.addCard-btn:hover .imgBoard {
+  transform: scale(1.02);
+  box-shadow: 1px 1px 15px 5px rgba(0,0,0,0.3);
+
+}
