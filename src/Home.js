@@ -3,6 +3,7 @@ import './App.css';
 import jsonBoards from './Boards.json';
 import { orderBy } from "lodash";
 import { withRouter } from 'react-router-dom';
+import { ProductConsumer } from './context';
 
 class Home extends React.Component {
     constructor(props) {
@@ -60,6 +61,7 @@ class Home extends React.Component {
     }
 
     render() {
+
         const { boardRecords, currentPage, itemsPerPage } = this.state;
         const indexOfLastItem = currentPage * itemsPerPage;
         const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -71,11 +73,13 @@ class Home extends React.Component {
                 <p style={{ fontStyle: "italic" }}>Price: {item.price}</p>
                 <p className="last-item">{item.last}</p>
                 <p className="new-item">{item.new}</p>
-                <img className="imgBoard" onClick={this.routeChange} src={item.img} alt="" />
+
+                <img className="imgBoard" onClick={(this.routeChange)} src={item.img} alt="" />
 
                 <button className="addCard-btn" onClick={(e) => this.props.handleAddToCart(e, item)}>Add to cart </button>
 
             </div >
+
         })
 
         const pageNumbers = [];

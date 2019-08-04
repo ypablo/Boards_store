@@ -13,10 +13,12 @@ export default class Product extends Component {
                     const { id, title, img, info, price, inCart } = value.detailProduct;
                     return (
                         <div className="ProductContainer">
+
                             {/* title */}
                             <div className="ProductTitle">
                                 <h1>{title}</h1>
                             </div>
+
                             <div className="ProductImgInfo">
                                 {/* img */}
                                 <div className="ProductImg"><img src={img} alt="product" /></div>
@@ -31,6 +33,7 @@ export default class Product extends Component {
                                     value.addToCart(id)
                                 }}>{inCart ? 'InCart' : 'Add to basket'}</button>
                             </div>
+
                         </div>
                     )
                 }}
