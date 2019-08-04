@@ -1,6 +1,6 @@
 * {
   margin:0;
-  font-family: 'Nanum Gothic', sans-serif;
+  /*font-family: 'Nanum Gothic', sans-serif;*/
   scroll-behavior: smooth;
 }
 
@@ -56,7 +56,7 @@
   border-left: 1px solid #fff;
   margin-top: 20px; 
   width: 80vw;
-  overflow: auto;
+  /*overflow: auto;*/
   height: 70vh;
 }
 .container {
@@ -146,6 +146,11 @@
 
 .boardItems {
   position: relative;
+  transition: 1.1s;
+}
+
+.boardItems:hover {
+  transform: scale(1.05,1.05);
 }
 
 .last-item {
