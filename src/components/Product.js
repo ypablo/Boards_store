@@ -8,7 +8,6 @@ export default class Product extends Component {
     render() {
         return (
             <ProductConsumer className="container">
-
                 {(value) => {
                     const { id, title, img, info, price, inCart } = value.detailProduct;
                     return (
@@ -37,7 +36,6 @@ export default class Product extends Component {
                         </div>
                     )
                 }}
-
             </ProductConsumer>
         )
     }
