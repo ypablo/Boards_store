@@ -73,11 +73,8 @@ class Home extends React.Component {
                 <p style={{ fontStyle: "italic" }}>Price: {item.price}</p>
                 <p className="last-item">{item.last}</p>
                 <p className="new-item">{item.new}</p>
-
                 <img className="imgBoard" onClick={(this.routeChange)} src={item.img} alt="" />
-
                 <button className="addCard-btn" onClick={() => console.log("test")}>Add to cart </button>
-
             </div >
 
         })
