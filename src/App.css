@@ -276,7 +276,7 @@
   padding-left: 1em;
 }
 
-.BackProduct-btn, .Basket-btn {
+.BackProduct-btn, .cart-btn {
   cursor: pointer;
   font-size: 1.4rem;
   background: transparent;
@@ -286,8 +286,14 @@
   padding: 5px;
   margin: 15px;
 }
-.BackProduct-btn:hover, .Basket-btn:hover {
+.BackProduct-btn:hover, .cart-btn:hover {
   color: #fff;
   border-color: #fff;
   background-color: #34495e;
+}
+
+.xxx {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

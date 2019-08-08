@@ -76,7 +76,7 @@ class Home extends React.Component {
 
                 <img className="imgBoard" onClick={(this.routeChange)} src={item.img} alt="" />
 
-                <button className="addCard-btn" onClick={(e) => this.props.handleAddToCart(e, item)}>Add to cart </button>
+                <button className="addCard-btn" onClick={() => console.log("test")}>Add to cart </button>
 
             </div >
 

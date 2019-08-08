@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-class Basket extends React.Component {
+class Cart extends React.Component {
     constructor() {
         super()
         this.state = {}
@@ -18,10 +18,10 @@ class Basket extends React.Component {
         return (
             < div className="container" >
 
-
+                <h1>Basket</h1>
             </div >
         )
     }
 }
 
-export default Basket;
+export default Cart;

@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./Home";
-import Basket from "./components/Basket";
+//import Home from "./Home";
+import Cart from "./components/Cart";
 import Error from "./components/Error";
 import Navigation from "./Navigation";
 import FAQ from "./components/FAQ";
 import Terms from "./components/Terms";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Product from "./components/Product"
+//import Product from "./components/Product";
+
+import ProductList from "./components/ProductList";
+import Details from "./components/Details"; 
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-
-  }
-
   render() {
     return (
       <BrowserRouter  >
@@ -25,13 +22,17 @@ class App extends Component {
           <Navigation />
           <div className="general">
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/basket" component={Basket} />
+              {/*<Route exact path="/" component={Home} />*/}
+              <Route exact path="/" component={ProductList} />
+              <Route path="/details" component={Details} />
+              <Route exact path="/cart" component={Cart} />
               <Route exact path="/faq" component={FAQ} />
               <Route exact path="/regulamin" component={Terms} />
               <Route exact path="/contact" component={Contact} />
-              <Route path="/product" component={Product} />
               <Route component={Error} />
+              {/*
+              <Route path="/product" component={Product} />*/}
+              
             </Switch>
           </div>
           <Footer />

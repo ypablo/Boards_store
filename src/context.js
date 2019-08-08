@@ -4,9 +4,7 @@ import { detailProduct } from './detailProduct.js';
 
 
 const ProductContext = React.createContext();
-//Provider
 
-//Consumer
 
 class ProductProvider extends Component {
     state = {
